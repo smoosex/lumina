@@ -6,11 +6,13 @@ A modern, highly customizable portfolio template built with **Vue 3**, **TypeScr
 
 <p align="center">
   <img src="public/preview1.png" width="45%" />
-  <img src="public/preview5.png" width="45%" />
+  <img src="public/preview2.png" width="45%" />
   <img src="public/preview3.png" width="45%" />
   <img src="public/preview4.png" width="45%" />
-  <img src="public/preview2.png" width="68%" />
-  <img src="public/preview-mobile.png" width="22%" />
+  <img src="public/preview5.png" width="45%" />
+  <img src="public/preview6.png" width="45%" />
+  <img src="public/preview7.png" width="45%" />
+  <img src="public/preview8.png" width="45%" />
 </p>
 
 ## Features

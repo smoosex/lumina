@@ -99,22 +99,6 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly IconLucideClover: UnwrapRef<typeof import('~icons/lucide/clover')['default']>
-    readonly IconLucideLayout: UnwrapRef<typeof import('~icons/lucide/layout')['default']>
-    readonly IconLucideZap: UnwrapRef<typeof import('~icons/lucide/zap')['default']>
-    readonly IconSkillIconsCss: UnwrapRef<typeof import('~icons/skill-icons/css')['default']>
-    readonly IconSkillIconsGolang: UnwrapRef<typeof import('~icons/skill-icons/golang')['default']>
-    readonly IconSkillIconsHtml: UnwrapRef<typeof import('~icons/skill-icons/html')['default']>
-    readonly IconSkillIconsJavascript: UnwrapRef<typeof import('~icons/skill-icons/javascript')['default']>
-    readonly IconSkillIconsKafka: UnwrapRef<typeof import('~icons/skill-icons/kafka')['default']>
-    readonly IconSkillIconsLuaDark: UnwrapRef<typeof import('~icons/skill-icons/lua-dark')['default']>
-    readonly IconSkillIconsMongodb: UnwrapRef<typeof import('~icons/skill-icons/mongodb')['default']>
-    readonly IconSkillIconsMysqlDark: UnwrapRef<typeof import('~icons/skill-icons/mysql-dark')['default']>
-    readonly IconSkillIconsPythonDark: UnwrapRef<typeof import('~icons/skill-icons/python-dark')['default']>
-    readonly IconSkillIconsRedisDark: UnwrapRef<typeof import('~icons/skill-icons/redis-dark')['default']>
-    readonly IconSkillIconsTailwindcssDark: UnwrapRef<typeof import('~icons/skill-icons/tailwindcss-dark')['default']>
-    readonly IconSkillIconsTypescript: UnwrapRef<typeof import('~icons/skill-icons/typescript')['default']>
-    readonly IconSkillIconsVuejsDark: UnwrapRef<typeof import('~icons/skill-icons/vuejs-dark')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>

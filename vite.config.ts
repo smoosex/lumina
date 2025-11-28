@@ -56,6 +56,7 @@ export default defineConfig({
 			},
 		}),
 	],
+  base: '/lumina/',
 	resolve: {
 		alias: {
 			"@": fileURLToPath(new URL("./src", import.meta.url)),

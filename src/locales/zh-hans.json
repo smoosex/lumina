@@ -1,0 +1,37 @@
+{
+	"home": {
+		"titlePrefix": "我是",
+		"description": "热爱代码，痴迷设计，以及两者之间的一切。欢迎来到我的数字花园。",
+		"hero": {
+			"primaryButton": "开始了解",
+			"secondaryButton": "我的作品"
+		},
+		"greeting": "你好 世界",
+		"about": {
+			"title": "关于我",
+			"description": "我致力于打造融合美学与功能的数字体验。怀揣着对整洁代码和直观设计的热情，我在网络上将创意变为现实。"
+		},
+		"skills": {
+			"title": "技能"
+		},
+		"works": {
+			"title": "精选作品",
+			"explore": "探索",
+			"projectAlpha": {
+				"title": "Project Alpha",
+				"description": "A conceptual dashboard for financial analytics."
+			},
+			"projectBeta": {
+				"title": "Project Beta",
+				"description": "High-performance data visualization toolkit."
+			},
+			"projectGamma": {
+				"title": "Project Gamma",
+				"description": "A web application for managing tasks."
+			}
+		},
+		"contact": {
+			"title": "联系我"
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"home": {
+		"titlePrefix": "I am",
+		"description": "Passionate about code, design, and everything in between. Welcome to my digital garden.",
+		"hero": {
+			"primaryButton": "Start Exploring",
+			"secondaryButton": "My Works"
+		},
+		"greeting": "Hello World",
+		"about": {
+			"title": "About Me",
+			"description": "I craft digital experiences that blend aesthetics with functionality. With a passion for clean code and intuitive design, I bring ideas to life on the web."
+		},
+		"skills": {
+			"title": "Skills"
+		},
+		"works": {
+			"title": "Selected Works",
+			"explore": "Explore",
+			"projectAlpha": {
+				"title": "Project Alpha",
+				"description": "A conceptual dashboard for financial analytics."
+			},
+			"projectBeta": {
+				"title": "Project Beta",
+				"description": "High-performance data visualization toolkit."
+			},
+			"projectGamma": {
+				"title": "Project Gamma",
+				"description": "A web application for managing tasks."
+			}
+		},
+		"contact": {
+			"title": "Get in Touch"
+		}
+	}
+}

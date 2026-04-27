@@ -135,7 +135,7 @@ onMounted(async () => {
 
       <AboutSection id="about-section" />
 
-      <SkillsSection :skills="skills" />
+      <SkillsSection id="skills-section" :skills="skills" />
 
       <WorksSection
         id="works-section"
@@ -143,7 +143,7 @@ onMounted(async () => {
         :onNavigate="navigateTo"
       />
 
-      <ContactSection />
+      <ContactSection id="contact-section" />
     </div>
   </div>
 </template>

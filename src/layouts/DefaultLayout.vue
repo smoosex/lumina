@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const themeStore = useThemeStore();
 const isDark = computed(() => themeStore.mode === "dark");
@@ -57,6 +58,26 @@ const toggleMenu = (menu: "theme" | "lang", event: Event) => {
 
 const closeMenus = () => {
   activeMenu.value = null;
+};
+
+const navItems = [
+  { key: "about", i18n: "home.about.title" },
+  { key: "skills", i18n: "home.skills.title" },
+  { key: "works", i18n: "home.works.title" },
+  { key: "contact", i18n: "home.contact.title" },
+];
+
+const scrollToSection = (key: string) => {
+  const el = document.getElementById(`${key}-section`);
+  if (!el) return;
+  const elementHeight = el.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const offset = (windowHeight - elementHeight) / 2;
+  gsap.to(window, {
+    duration: 1.5,
+    scrollTo: { y: el, offsetY: offset },
+    ease: "power3.inOut",
+  });
 };
 
 onMounted(() => {
@@ -122,7 +143,7 @@ onUnmounted(() => {
   >
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center transition-all duration-300"
+      class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center gap-4 transition-all duration-300"
       :class="[
         isScrolled
           ? 'bg-background border-border shadow-sm'
@@ -131,7 +152,7 @@ onUnmounted(() => {
     >
       <!-- Logo -->
       <div
-        class="text-2xl leading-none font-bold tracking-wider drop-shadow-sm flex items-center whitespace-nowrap overflow-hidden text-foreground"
+        class="text-2xl leading-none font-bold tracking-wider drop-shadow-sm flex items-center whitespace-nowrap overflow-hidden text-foreground w-48 shrink-0"
       >
         <span>H</span>
         <span
@@ -141,6 +162,18 @@ onUnmounted(() => {
         >
         <span>D</span>
       </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-1 flex-1 justify-center">
+        <button
+          v-for="item in navItems"
+          :key="item.key"
+          @click="scrollToSection(item.key)"
+          class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full cursor-pointer"
+        >
+          {{ $t(item.i18n) }}
+        </button>
+      </nav>
 
       <div class="flex items-center gap-4">
         <!-- Theme Selector -->

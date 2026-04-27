@@ -143,7 +143,7 @@ onUnmounted(() => {
   >
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center gap-4 transition-all duration-300"
+      class="fixed top-0 left-0 right-0 z-50 px-6 py-2 flex items-center gap-3 transition-all duration-300"
       :class="[
         isScrolled
           ? 'bg-background border-border shadow-sm'
@@ -152,7 +152,7 @@ onUnmounted(() => {
     >
       <!-- Logo -->
       <div
-        class="text-2xl leading-none font-bold tracking-wider drop-shadow-sm flex items-center whitespace-nowrap overflow-hidden text-foreground w-48 shrink-0"
+        class="text-xl leading-none font-bold tracking-wider drop-shadow-sm flex items-center whitespace-nowrap overflow-hidden text-foreground w-40 shrink-0"
       >
         <span>H</span>
         <span
@@ -169,22 +169,22 @@ onUnmounted(() => {
           v-for="item in navItems"
           :key="item.key"
           @click="scrollToSection(item.key)"
-          class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full cursor-pointer"
+          class="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full cursor-pointer"
         >
           {{ $t(item.i18n) }}
         </button>
       </nav>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2"> 
         <!-- Theme Selector -->
         <div class="relative">
           <button
             @click="(e) => toggleMenu('theme', e)"
-            class="flex items-center gap-2 px-3 py-2 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
+            class="flex items-center gap-1.5 px-2 py-1.5 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
             :class="{ 'ring-2 ring-ring': activeMenu === 'theme' }"
           >
-            <IconLucidePalette class="w-5 h-5" />
-            <span class="text-sm font-medium uppercase hidden sm:inline">{{
+            <IconLucidePalette class="w-4 h-4" />
+            <span class="text-xs font-medium uppercase hidden sm:inline">{{
               themeOptions.find((t) => t.value === currentThemeName)?.label
             }}</span>
           </button>
@@ -219,11 +219,11 @@ onUnmounted(() => {
         <div class="relative">
           <button
             @click="(e) => toggleMenu('lang', e)"
-            class="flex items-center gap-2 px-3 py-2 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
+            class="flex items-center gap-1.5 px-2 py-1.5 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
             :class="{ 'ring-2 ring-ring': activeMenu === 'lang' }"
           >
-            <IconLucideLanguages class="w-5 h-5" />
-            <span class="text-sm font-medium uppercase hidden sm:inline">{{
+            <IconLucideLanguages class="w-4 h-4" />
+            <span class="text-xs font-medium uppercase hidden sm:inline">{{
               currentLocale
             }}</span>
           </button>
@@ -256,11 +256,11 @@ onUnmounted(() => {
         <!-- Mode Switcher -->
         <button
           @click="toggleThemeMode"
-          class="p-2 rounded-full transition-all hover:rotate-12 cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
+          class="p-1.5 rounded-full transition-all hover:rotate-12 cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
           :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
         >
-          <IconLucideMoon v-if="isDark" class="w-5 h-5" />
-          <IconLucideSun v-else class="w-5 h-5" />
+          <IconLucideMoon v-if="isDark" class="w-4 h-4" />
+          <IconLucideSun v-else class="w-4 h-4" />
         </button>
       </div>
     </header>

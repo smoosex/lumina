@@ -180,17 +180,14 @@ onUnmounted(() => {
         <div class="relative">
           <button
             @click="(e) => toggleMenu('theme', e)"
-            class="flex items-center gap-1.5 px-2 py-1.5 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
+            class="p-1.5 rounded-full transition-all cursor-pointer bg-card border border-border text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
             :class="{ 'ring-2 ring-ring': activeMenu === 'theme' }"
           >
             <IconLucidePalette class="w-4 h-4" />
-            <span class="text-xs font-medium uppercase hidden sm:inline">{{
-              themeOptions.find((t) => t.value === currentThemeName)?.label
-            }}</span>
           </button>
 
           <div
-            class="absolute right-0 mt-2 w-40 py-2 rounded-xl z-50 transition-all transform origin-top-right bg-card border border-border shadow-lg"
+            class="absolute right-0 mt-2 w-40 rounded-xl z-50 transition-all transform origin-top-right bg-card border border-border shadow-lg overflow-hidden"
             :class="[
               activeMenu === 'theme'
                 ? 'opacity-100 visible scale-100'
@@ -229,7 +226,7 @@ onUnmounted(() => {
           </button>
           <!-- Dropdown -->
           <div
-            class="absolute right-0 mt-2 w-32 py-2 rounded-xl z-50 transition-all transform origin-top-right bg-card border border-border shadow-lg"
+            class="absolute right-0 mt-2 w-32 rounded-xl z-50 transition-all transform origin-top-right bg-card border border-border shadow-lg overflow-hidden"
             :class="[
               activeMenu === 'lang'
                 ? 'opacity-100 visible scale-100'

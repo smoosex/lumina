@@ -61,12 +61,11 @@ const dotActiveColor = ref("#000000");
 
 const updateThemeColors = () => {
   const style = getComputedStyle(document.documentElement);
+  const dotBase = style.getPropertyValue("--dot-base").trim();
   const border = style.getPropertyValue("--border").trim();
   const primary = style.getPropertyValue("--primary").trim();
 
-  if (border) {
-    dotBaseColor.value = border;
-  }
+  dotBaseColor.value = dotBase || border || dotBaseColor.value;
 
   if (primary) {
     dotActiveColor.value = primary;

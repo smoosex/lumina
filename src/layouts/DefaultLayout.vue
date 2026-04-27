@@ -21,11 +21,9 @@ const localeOptions = [
 ];
 
 const themeOptions = [
-  { label: "Claude", value: "claude" },
-  { label: "Amethyst", value: "amethyst" },
-  { label: "Catppuccin", value: "catppuccin" },
-  { label: "Notebook", value: "notebook" },
-  { label: "Soft Pop", value: "soft-pop" },
+  { label: "Everforest Hard", value: "everforest-hard" },
+  { label: "Everforest Medium", value: "everforest-medium" },
+  { label: "Everforest Soft", value: "everforest-soft" },
 ];
 
 const currentLocale = computed({

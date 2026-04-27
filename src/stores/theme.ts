@@ -11,7 +11,7 @@ export const useThemeStore = defineStore("theme", () => {
 				? "dark"
 				: "light"
 	);
-	const themeName = ref(storedThemeName || "claude");
+	const themeName = ref(storedThemeName || "everforest-hard");
 
 	const setMode = (next: string) => {
 		mode.value = next;

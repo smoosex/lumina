@@ -31,7 +31,7 @@ src/
 ├── components/          ← shared components (DotGrid, Shuffle)
 ├── layouts/             ← DefaultLayout, BlankLayout
 ├── locales/             ← en.json, zh-hans.json
-├── assets/styles/themes/ ← 5 theme CSS files (claude, amethyst, catppuccin, notebook, soft-pop)
+├── assets/styles/themes/ ← 3 everforest variants (hard, medium, soft)
 ├── types/               ← GENERATED auto-imports.d.ts, components.d.ts — do not edit
 └── utils/
 ```
@@ -49,7 +49,7 @@ src/
 
 - **Pinia stores** use setup-syntax (`defineStore("name", () => { … })`)
 - **i18n**: locale persisted as `localStorage("user-locale")`, default `zhHans`, legacy mode off
-- **Theme**: dark/light mode + 5 named themes. Persisted via `localStorage("theme-mode")` and `localStorage("theme-name")`. CSS classes `dark` and `theme-<name>` are applied to `<html>`.
+- **Theme**: dark/light mode + 3 everforest variants (hard, medium, soft). Persisted via `localStorage("theme-mode")` and `localStorage("theme-name")`. CSS classes `dark` and `theme-everforest-<variant>` are applied to `<html>`. Default is everforest-hard.
 - **Three.js model**: OBJ loaded in a web worker (`particle.worker.ts`) with `?worker` import
 - **GSAP**: ScrollTrigger + ScrollToPlugin registered at app level. Scroll animations use `.scroll-section` class convention.
 - **Icons**: Custom icons go in `src/assets/icons/` as SVG (collection: `sys-icons`). New icon sets need `bun add -D @iconify-json/<collection>`.

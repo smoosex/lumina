@@ -11,29 +11,28 @@
 		"type-check": "vue-tsc --build"
 	},
 	"dependencies": {
-		"@tailwindcss/vite": "^4.1.17",
-		"@types/three": "^0.181.0",
-		"gsap": "^3.13.0",
-		"lodash-es": "^4.17.21",
+		"@tailwindcss/vite": "^4.2.4",
+		"@types/three": "^0.184.0",
+		"gsap": "^3.15.0",
+		"lodash-es": "^4.18.1",
 		"pinia": "^3.0.4",
-		"tailwindcss": "^4.1.17",
-		"three": "^0.181.2",
-		"vue": "^3.5.24",
-		"vue-i18n": "11"
+		"tailwindcss": "^4.2.4",
+		"three": "^0.184.0",
+		"vue": "^3.5.33",
+		"vue-i18n": "^11.4.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.5",
-		"@iconify-json/lucide": "^1.2.75",
-		"@iconify-json/skill-icons": "^1.2.3",
-		"@types/node": "^22.19.1",
-		"@vitejs/plugin-vue": "^6.0.1",
-		"@vue/tsconfig": "^0.8.1",
-		"typescript": "~5.9.3",
-		"unplugin-auto-import": "^20.2.0",
-		"unplugin-icons": "^22.5.0",
-		"unplugin-vue-components": "^30.0.0",
-		"vite": "^7.2.2",
-		"vue-tsc": "^3.1.4"
+		"@biomejs/biome": "2.4.13",
+		"@iconify-json/lucide": "^1.2.104",
+		"@iconify-json/skill-icons": "^1.2.4",
+		"@types/node": "^25.6.0",
+		"@vitejs/plugin-vue": "^6.0.6",
+		"@vue/tsconfig": "^0.9.1",
+		"typescript": "~6.0.3",
+		"unplugin-auto-import": "^21.0.0",
+		"unplugin-icons": "^23.0.1",
+		"unplugin-vue-components": "^32.0.0",
+		"vite": "^8.0.10",
+		"vue-tsc": "^3.2.7"
 	}
 }
-

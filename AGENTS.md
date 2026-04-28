@@ -48,7 +48,7 @@ src/
 ## Key conventions
 
 - **Pinia stores** use setup-syntax (`defineStore("name", () => { … })`)
-- **i18n**: locale persisted as `localStorage("user-locale")`, default `zhHans`, legacy mode off
+- **i18n**: locale persisted as `localStorage("user-locale")`, default `en`, legacy mode off
 - **Theme**: dark/light mode + 3 everforest variants (hard, medium, soft). Persisted via `localStorage("theme-mode")` and `localStorage("theme-name")`. CSS classes `dark` and `theme-everforest-<variant>` are applied to `<html>`. Default is everforest-hard.
 - **Three.js model**: OBJ loaded in a web worker (`particle.worker.ts`) with `?worker` import
 - **GSAP**: ScrollTrigger + ScrollToPlugin registered at app level. Scroll animations use `.scroll-section` class convention.

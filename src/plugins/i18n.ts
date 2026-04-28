@@ -2,12 +2,12 @@ import { createI18n } from "vue-i18n";
 import zhHans from "../locales/zh-hans.json";
 import en from "../locales/en.json";
 
-const savedLocale = localStorage.getItem("user-locale") || "zhHans";
+const savedLocale = localStorage.getItem("user-locale") || "en";
 
 export default createI18n({
 	legacy: false,
 	locale: savedLocale,
-	fallbackLocale: "zhHans",
+	fallbackLocale: "en",
 	messages: {
 		zhHans: zhHans,
 		en: en,

@@ -12,7 +12,6 @@ defineProps<{
   onWorksClick?: () => void;
 }>();
 
-const heroRef = ref<HTMLElement | null>(null);
 const modelRef = ref<HTMLElement | null>(null);
 const isVisible = ref(true);
 let trigger: ScrollTrigger | null = null;
@@ -43,7 +42,6 @@ onUnmounted(() => {
 
 <template>
   <section
-    ref="heroRef"
     class="min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full"
   >
     <!-- Text Content -->

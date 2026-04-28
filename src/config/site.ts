@@ -69,28 +69,28 @@ export const skills: Skill[] = [
 export const works: Project[] = [
 	{
 		name: "inovue-ui",
-		icon: IconLucideLayout,
+		icon: IconLucideComponent,
 		link: "https://smoosex.github.io/inovue-ui/",
 		color: "from-chart-1 to-chart-2",
 		external: true,
 	},
 	{
 		name: "echotype",
-		icon: IconLucideZap,
+		icon: IconLucideMic,
 		link: "https://github.com/smoosex/echotype",
 		color: "from-chart-2 to-chart-3",
 		external: true,
 	},
 	{
 		name: "matheme",
-		icon: IconLucideClover,
+		icon: IconLucidePalette,
 		link: "https://github.com/smoosex/matheme",
 		color: "from-chart-3 to-chart-4",
 		external: true,
 	},
 	{
 		name: "agent-tracker",
-		icon: IconLucideClover,
+		icon: IconLucideRadar,
 		link: "http://www.smoose.cn/agent-tracker",
 		color: "from-chart-4 to-chart-5",
 		external: true,

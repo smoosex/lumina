@@ -8,7 +8,11 @@ export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
   const IconLucideClover: typeof import('~icons/lucide/clover').default
+  const IconLucideComponent: typeof import('~icons/lucide/component').default
   const IconLucideLayout: typeof import('~icons/lucide/layout').default
+  const IconLucideMic: typeof import('~icons/lucide/mic').default
+  const IconLucidePalette: typeof import('~icons/lucide/palette').default
+  const IconLucideRadar: typeof import('~icons/lucide/radar').default
   const IconLucideZap: typeof import('~icons/lucide/zap').default
   const IconSkillIconsCss: typeof import('~icons/skill-icons/css').default
   const IconSkillIconsGolang: typeof import('~icons/skill-icons/golang').default
@@ -100,7 +104,11 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly IconLucideClover: UnwrapRef<typeof import('~icons/lucide/clover')['default']>
+    readonly IconLucideComponent: UnwrapRef<typeof import('~icons/lucide/component')['default']>
     readonly IconLucideLayout: UnwrapRef<typeof import('~icons/lucide/layout')['default']>
+    readonly IconLucideMic: UnwrapRef<typeof import('~icons/lucide/mic')['default']>
+    readonly IconLucidePalette: UnwrapRef<typeof import('~icons/lucide/palette')['default']>
+    readonly IconLucideRadar: UnwrapRef<typeof import('~icons/lucide/radar')['default']>
     readonly IconLucideZap: UnwrapRef<typeof import('~icons/lucide/zap')['default']>
     readonly IconSkillIconsCss: UnwrapRef<typeof import('~icons/skill-icons/css')['default']>
     readonly IconSkillIconsGolang: UnwrapRef<typeof import('~icons/skill-icons/golang')['default']>

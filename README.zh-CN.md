@@ -5,14 +5,14 @@
 一个基于 **Vue 3**, **TypeScript**, **Tailwind CSS**, 和 **GSAP** 构建的现代、高度可定制的个人主页模板。
 
 <p align="center">
-  <img src="public/preview1.png" width="45%" />
-  <img src="public/preview2.png" width="45%" />
-  <img src="public/preview3.png" width="45%" />
-  <img src="public/preview4.png" width="45%" />
-  <img src="public/preview5.png" width="45%" />
-  <img src="public/preview6.png" width="45%" />
-  <img src="public/preview7.png" width="45%" />
-  <img src="public/preview8.png" width="45%" />
+  <img src="previews/preview1.png" width="45%" />
+  <img src="previews/preview2.png" width="45%" />
+  <img src="previews/preview3.png" width="45%" />
+  <img src="previews/preview4.png" width="45%" />
+  <img src="previews/preview5.png" width="45%" />
+  <img src="previews/preview6.png" width="45%" />
+  <img src="previews/preview7.png" width="45%" />
+  <img src="previews/preview8.png" width="45%" />
 </p>
 
 ## 特性
@@ -65,6 +65,15 @@
    # 或
    npm run dev
    ```
+
+3. （可选）更换 3D 模型后预计算粒子坐标：
+
+   ```bash
+   # 将新模型替换 src/assets/IronMan3D.obj，然后运行：
+   bun run precompute
+   ```
+
+   该脚本从 OBJ 文件采样表面点，生成 `src/assets/particle-positions.json`（777KB），避免运行时下载约 100MB 的 OBJ 文件。OBJ 本身不入构建产物。
 
 ## 自定义配置
 

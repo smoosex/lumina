@@ -5,14 +5,14 @@
 A modern, highly customizable portfolio template built with **Vue 3**, **TypeScript**, **Tailwind CSS**, and **GSAP**.
 
 <p align="center">
-  <img src="public/preview1.png" width="45%" />
-  <img src="public/preview2.png" width="45%" />
-  <img src="public/preview3.png" width="45%" />
-  <img src="public/preview4.png" width="45%" />
-  <img src="public/preview5.png" width="45%" />
-  <img src="public/preview6.png" width="45%" />
-  <img src="public/preview7.png" width="45%" />
-  <img src="public/preview8.png" width="45%" />
+  <img src="previews/preview1.png" width="45%" />
+  <img src="previews/preview2.png" width="45%" />
+  <img src="previews/preview3.png" width="45%" />
+  <img src="previews/preview4.png" width="45%" />
+  <img src="previews/preview5.png" width="45%" />
+  <img src="previews/preview6.png" width="45%" />
+  <img src="previews/preview7.png" width="45%" />
+  <img src="previews/preview8.png" width="45%" />
 </p>
 
 ## Features
@@ -65,6 +65,15 @@ A modern, highly customizable portfolio template built with **Vue 3**, **TypeScr
    # or
    npm run dev
    ```
+
+3. (Optional) Pre-compute particle positions if you changed the 3D model:
+
+   ```bash
+   # Replace src/assets/IronMan3D.obj with your own model, then:
+   bun run precompute
+   ```
+
+   This samples surface points from the OBJ file into `src/assets/particle-positions.json` (777KB), avoiding ~100MB runtime downloads. The OBJ itself is not bundled.
 
 ## Customization
 

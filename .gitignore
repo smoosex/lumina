@@ -13,7 +13,6 @@ dist
 dist-ssr
 coverage
 *.local
-lumina
 
 # Editor directories and files
 .vscode/*
@@ -38,3 +37,6 @@ __screenshots__/
 
 # MacOS
 .DS_Store
+
+# Large 3D assets (use bun run precompute to generate particle-positions.json)
+*.obj

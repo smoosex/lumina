@@ -175,7 +175,7 @@ onUnmounted(() => {
         </button>
       </nav>
 
-      <div class="flex items-center gap-2"> 
+      <div class="flex items-center gap-2 ml-auto"> 
         <!-- Theme Selector -->
         <div class="relative">
           <button

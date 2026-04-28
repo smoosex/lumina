@@ -1,7 +1,6 @@
 {
 	"home": {
-		"titlePrefix": "我是",
-		"description": "热爱代码，痴迷设计，以及两者之间的一切。欢迎来到我的数字花园。",
+		"description": "热爱代码与设计，以及两者之间的一切，欢迎来到我的数字花园。",
 		"hero": {
 			"primaryButton": "开始了解",
 			"secondaryButton": "我的作品"

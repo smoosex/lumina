@@ -44,30 +44,31 @@ onUnmounted(() => {
   <section
     class="min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full"
   >
-    <!-- Text Content -->
     <div class="hero-content flex flex-col justify-center items-start z-10">
-      <h2
-        class="text-xl md:text-2xl font-medium text-primary mb-4 tracking-wide uppercase"
-      >
-        <shuffle
-          :key="$t('home.greeting')"
-          :text="$t('home.greeting')"
-          shuffle-direction="right"
-          :duration="0.35"
-          animation-mode="evenodd"
-          :shuffle-times="1"
-          ease="power3.out"
-          :stagger="0.03"
-          :threshold="0.1"
-          :trigger-once="true"
-          :trigger-on-hover="true"
-          :respect-reduced-motion="true"
-        />
-      </h2>
+      <div class="mb-8">
+        <h2
+          class="text-xl md:text-2xl font-medium text-primary tracking-wide uppercase"
+        >
+          <shuffle
+            :key="$t('home.greeting')"
+            :text="$t('home.greeting')"
+            shuffle-direction="right"
+            :duration="0.35"
+            animation-mode="evenodd"
+            :shuffle-times="1"
+            ease="power3.out"
+            :stagger="0.03"
+            :threshold="0.1"
+            :trigger-once="true"
+            :trigger-on-hover="true"
+            :respect-reduced-motion="true"
+          />
+        </h2>
+        <div class="mt-4 h-px w-24 bg-primary/60" />
+      </div>
       <h1
         class="text-4xl sm:text-5xl md:text-8xl font-black text-foreground leading-tight mb-8"
       >
-        {{ $t("home.titlePrefix") }} <br />
         <span
           class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent"
         >
@@ -94,7 +95,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- 3D Model -->
     <div
       ref="modelRef"
       class="w-full h-[500px] flex items-center justify-center relative z-0"

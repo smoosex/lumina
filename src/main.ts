@@ -1,5 +1,6 @@
 // Plugins
 import { registerPlugins } from "@/plugins";
+import { applyMetadata } from "@/utils/metadata";
 
 // Components
 import App from "./App.vue";
@@ -11,6 +12,8 @@ import { createApp } from "vue";
 import "./style.css";
 
 const app = createApp(App);
+
+applyMetadata();
 
 registerPlugins(app);
 

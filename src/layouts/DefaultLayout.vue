@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -11,129 +11,128 @@ const isScrolled = ref(false);
 let scrollTrigger: ScrollTrigger | null = null;
 
 const toggleThemeMode = () => {
-  themeStore.setMode(isDark.value ? "light" : "dark");
+	themeStore.setMode(isDark.value ? "light" : "dark");
 };
 
 const { locale } = useI18n();
 
 const localeOptions = [
-  { label: "简体中文", value: "zhHans" },
-  { label: "English", value: "en" },
+	{ label: "简体中文", value: "zhHans" },
+	{ label: "English", value: "en" },
 ];
 
 const themeOptions = [
-  { label: "Everforest Hard", value: "everforest-hard" },
-  { label: "Everforest Medium", value: "everforest-medium" },
-  { label: "Everforest Soft", value: "everforest-soft" },
+	{ label: "Everforest Hard", value: "everforest-hard" },
+	{ label: "Everforest Medium", value: "everforest-medium" },
+	{ label: "Everforest Soft", value: "everforest-soft" },
 ];
 
 const currentLocale = computed({
-  get: () => locale.value,
-  set: (val: string) => {
-    locale.value = val;
-    localStorage.setItem("user-locale", val);
-    activeMenu.value = null;
-  },
+	get: () => locale.value,
+	set: (val: string) => {
+		locale.value = val;
+		localStorage.setItem("user-locale", val);
+		activeMenu.value = null;
+	},
 });
 
 const currentThemeName = computed({
-  get: () => themeStore.themeName,
-  set: (val: string) => {
-    themeStore.setThemeName(val);
-    activeMenu.value = null;
-  },
+	get: () => themeStore.themeName,
+	set: (val: string) => {
+		themeStore.setThemeName(val);
+		activeMenu.value = null;
+	},
 });
 
 const middleTextRef = ref<HTMLElement | null>(null);
 const activeMenu = ref<"theme" | "lang" | null>(null);
 
 const toggleMenu = (menu: "theme" | "lang", event: Event) => {
-  event.stopPropagation();
-  if (activeMenu.value === menu) {
-    activeMenu.value = null;
-  } else {
-    activeMenu.value = menu;
-  }
+	event.stopPropagation();
+	if (activeMenu.value === menu) {
+		activeMenu.value = null;
+	} else {
+		activeMenu.value = menu;
+	}
 };
 
 const closeMenus = () => {
-  activeMenu.value = null;
+	activeMenu.value = null;
 };
 
 const navItems = [
-  { key: "about", i18n: "home.about.title" },
-  { key: "skills", i18n: "home.skills.title" },
-  { key: "works", i18n: "home.works.title" },
-  { key: "contact", i18n: "home.contact.title" },
+	{ key: "skills", i18n: "home.skills.title" },
+	{ key: "works", i18n: "home.works.title" },
+	{ key: "contact", i18n: "home.contact.title" },
 ];
 
 const scrollToSection = (key: string) => {
-  const el = document.getElementById(`${key}-section`);
-  if (!el) return;
-  const elementHeight = el.offsetHeight;
-  const windowHeight = window.innerHeight;
-  const offset = (windowHeight - elementHeight) / 2;
-  gsap.to(window, {
-    duration: 1.5,
-    scrollTo: { y: el, offsetY: offset },
-    ease: "power3.inOut",
-  });
+	const el = document.getElementById(`${key}-section`);
+	if (!el) return;
+	const elementHeight = el.offsetHeight;
+	const windowHeight = window.innerHeight;
+	const offset = (windowHeight - elementHeight) / 2;
+	gsap.to(window, {
+		duration: 1.5,
+		scrollTo: { y: el, offsetY: offset },
+		ease: "power3.inOut",
+	});
 };
 
 onMounted(() => {
-  themeStore.setMode(themeStore.mode);
-  themeStore.setThemeName(themeStore.themeName);
+	themeStore.setMode(themeStore.mode);
+	themeStore.setThemeName(themeStore.themeName);
 
-  document.addEventListener("click", closeMenus);
+	document.addEventListener("click", closeMenus);
 
-  scrollTrigger = ScrollTrigger.create({
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    onUpdate: (self) => {
-      isScrolled.value = self.scroll() > 50;
-    },
-  });
+	scrollTrigger = ScrollTrigger.create({
+		trigger: document.body,
+		start: "top top",
+		end: "bottom bottom",
+		onUpdate: (self) => {
+			isScrolled.value = self.scroll() > 50;
+		},
+	});
 
-  if (middleTextRef.value) {
-    gsap.from(middleTextRef.value, {
-      width: 0,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.5,
-    });
-  }
+	if (middleTextRef.value) {
+		gsap.from(middleTextRef.value, {
+			width: 0,
+			opacity: 0,
+			duration: 1,
+			ease: "power3.out",
+			delay: 0.5,
+		});
+	}
 });
 
 watch(isScrolled, (scrolled) => {
-  if (scrolled) activeMenu.value = null;
+	if (scrolled) activeMenu.value = null;
 
-  if (!middleTextRef.value) return;
-  if (scrolled) {
-    gsap.to(middleTextRef.value, {
-      width: 0,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.inOut",
-      overwrite: true,
-    });
-  } else {
-    gsap.to(middleTextRef.value, {
-      width: "auto",
-      opacity: 1,
-      duration: 0.5,
-      ease: "power3.inOut",
-      overwrite: true,
-    });
-  }
+	if (!middleTextRef.value) return;
+	if (scrolled) {
+		gsap.to(middleTextRef.value, {
+			width: 0,
+			opacity: 0,
+			duration: 0.5,
+			ease: "power3.inOut",
+			overwrite: true,
+		});
+	} else {
+		gsap.to(middleTextRef.value, {
+			width: "auto",
+			opacity: 1,
+			duration: 0.5,
+			ease: "power3.inOut",
+			overwrite: true,
+		});
+	}
 });
 
 onUnmounted(() => {
-  if (scrollTrigger) {
-    scrollTrigger.kill();
-  }
-  document.removeEventListener("click", closeMenus);
+	if (scrollTrigger) {
+		scrollTrigger.kill();
+	}
+	document.removeEventListener("click", closeMenus);
 });
 </script>
 

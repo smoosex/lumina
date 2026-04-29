@@ -35,6 +35,9 @@ coverage
 # Vitest
 __screenshots__/
 
+# Playwright
+.playwright-mcp/
+
 # MacOS
 .DS_Store
 

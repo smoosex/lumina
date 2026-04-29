@@ -6,10 +6,6 @@
 			"secondaryButton": "My Works"
 		},
 		"greeting": "Hello World",
-		"about": {
-			"title": "About Me",
-			"description": "I craft digital experiences that blend aesthetics with functionality. With a passion for clean code and intuitive design, I bring ideas to life on the web."
-		},
 		"skills": {
 			"title": "Skills"
 		},

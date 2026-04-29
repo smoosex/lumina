@@ -6,10 +6,6 @@
 			"secondaryButton": "我的作品"
 		},
 		"greeting": "你好 世界",
-		"about": {
-			"title": "关于我",
-			"description": "我致力于打造融合美学与功能的数字体验。怀揣着对整洁代码和直观设计的热情，我在网络上将创意变为现实。"
-		},
 		"skills": {
 			"title": "技能"
 		},
@@ -28,10 +24,10 @@
 				"title": "Matheme",
 				"description": "一款适用于 MacOS 的主题切换器，支持 Sketchybar、Nvchad、Aerospace 等"
 			},
-      "agent-tracker": {
-        "title": "Agent Tracker",
-        "description": "Agent Tracker 是一个用来追踪 AI 编码工具更新动态的小型 Web 应用"
-      }
+			"agent-tracker": {
+				"title": "Agent Tracker",
+				"description": "Agent Tracker 是一个用来追踪 AI 编码工具更新动态的小型 Web 应用"
+			}
 		},
 		"contact": {
 			"title": "联系我"

@@ -18,35 +18,10 @@ export const siteConfig = {
 	},
 	profile: {
 		name: "Smoose",
-		role: "Full Stack Developer",
 		email: "kongzhh1101@gmail.com",
 		github: "https://github.com/smoosex",
-		passion: "Building cool stuff",
 	},
 };
-
-export const aboutCode = (profile: typeof siteConfig.profile) => `package main
-
-import "${"fmt"}"
-
-type Developer struct {
-    Name    string
-    Role    string
-    Skills  []string
-    Passion string
-}
-
-func main() {
-    me := Developer{
-        Name:    "${profile.name}",
-        Role:    "${profile.role}",
-        Skills:  []string{"Vue", "Go", "TS"},
-        Passion: "${profile.passion}",
-    }
-
-    fmt.Printf("Hello, I'm %s!\\n", me.Name)
-    fmt.Println("Ready to code? 🚀")
-}`;
 
 // Icons are auto-imported by unplugin-icons
 // If you want to add more icons, check https://icones.js.org/

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { appPath } from "@/utils/app-base";
 
 const ParticleModel = defineAsyncComponent(() => import("./ParticleModel.vue"));
 
@@ -93,6 +94,13 @@ onUnmounted(() => {
           <IconLucideDog class="w-5 h-5" />
           {{ $t("home.hero.secondaryButton") }}
         </button>
+        <a
+          :href="appPath('/notes')"
+          class="px-6 py-3 md:px-8 md:py-4 rounded-full bg-secondary/10 border-2 border-border text-foreground font-bold text-base md:text-lg hover:bg-secondary transition flex items-center gap-2"
+        >
+          <IconLucideBookOpen class="w-5 h-5" />
+          {{ $t("home.notes.title") }}
+        </a>
       </div>
     </div>
 

@@ -189,10 +189,12 @@ onUnmounted(() => {
       <div class="flex items-center gap-2 ml-auto"> 
         <a
           :href="appPath('/notes')"
-          class="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground"
+          class="inline-flex h-9 w-9 items-center justify-center gap-1.5 rounded-full border border-border bg-card text-sm font-medium text-muted-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground sm:h-auto sm:w-auto sm:px-3 sm:py-1.5"
+          :aria-label="$t('home.notes.title')"
+          :title="$t('home.notes.title')"
         >
           <IconLucideBookOpen class="h-4 w-4" />
-          {{ $t("home.notes.title") }}
+          <span class="hidden sm:inline">{{ $t("home.notes.title") }}</span>
         </a>
 
         <!-- Theme Selector -->

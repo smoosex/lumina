@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { appPath } from "@/utils/app-base";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -70,7 +71,7 @@ const navItems = [
 const scrollToSection = (key: string) => {
 	const el = document.getElementById(`${key}-section`);
 	if (!el) {
-		window.history.pushState({}, "", `/#${key}-section`);
+		window.history.pushState({}, "", appPath(`#${key}-section`));
 		window.dispatchEvent(new PopStateEvent("popstate"));
 		window.setTimeout(() => scrollToSection(key), 50);
 		return;
@@ -187,7 +188,7 @@ onUnmounted(() => {
 
       <div class="flex items-center gap-2 ml-auto"> 
         <a
-          href="/notes"
+          :href="appPath('/notes')"
           class="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground"
         >
           <IconLucideBookOpen class="h-4 w-4" />

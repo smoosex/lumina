@@ -57,7 +57,7 @@ Use `backend/.env` for backend configuration. Commit only `backend/.env.example`
 SERVER_ADDR=127.0.0.1:8080
 DATABASE_DSN=postgres://USER:PASSWORD@HOST:6543/postgres?sslmode=require
 UPLOAD_SIGNATURE_SECRET=change-this-long-random-secret
-UPLOAD_API_BASE_URL=https://api.smoose.cn
+UPLOAD_API_BASE_URL=https://www.smoose.cn/lumina
 ```
 
 The repository should ignore real env files:
@@ -69,7 +69,7 @@ The repository should ignore real env files:
 !**/.env.example
 ```
 
-Copy `backend/.env.example` to `backend/.env`, then replace placeholder values. The frontend calls same-origin `/api/*`, so it does not need its own `.env` for the Nginx deployment.
+Copy `backend/.env.example` to `backend/.env`, then replace placeholder values. The frontend calls same-origin `/lumina/api/*` and `/lumina/covers/*`, so it does not need its own `.env` for the Nginx deployment.
 
 ## Secure Upload Without Login
 
@@ -306,7 +306,7 @@ gopkg.in/yaml.v3
 
 ## Frontend Integration
 
-The frontend requests `/api/*` directly. In production, Nginx proxies `/api/*` to the Go backend. In local development, Vite proxies `/api/*` to `http://127.0.0.1:8080`.
+The frontend is served under `/lumina/`. It requests `/lumina/api/*` and `/lumina/covers/*`; in production, Nginx rewrites those paths to the Go backend. In local development, Vite proxies them to `http://127.0.0.1:8080`.
 
 Frontend modules:
 
@@ -326,7 +326,7 @@ Routes are handled by a lightweight path switch in `App.vue` for now, without ad
 /notes/:slug
 ```
 
-The home page only links to reading notes. The reading notes list lives on `/notes`, and detail links use `/notes/:slug`, so the self-hosted frontend server needs history fallback to `frontend/dist/index.html`.
+The home page only links to reading notes. The reading notes list lives on `/lumina/notes`, and detail links use `/lumina/notes/:slug`, so the self-hosted frontend server needs history fallback to `frontend/dist/index.html`.
 
 ## Upload CLI Flow
 
@@ -336,7 +336,7 @@ The local upload command should:
 2. Parse frontmatter locally for quick validation.
 3. Compute body SHA256.
 4. Sign request with the local secret.
-5. Send `PUT /api/admin/reading-notes/:slug`.
+5. Send `PUT /lumina/api/admin/reading-notes/:slug`.
 6. Print the published URL.
 
 Example:
@@ -357,7 +357,7 @@ The CLI reads `UPLOAD_SIGNATURE_SECRET` and `UPLOAD_API_BASE_URL` from `backend/
 5. Implement signed upload middleware.
 6. Implement note upsert endpoint.
 7. Implement public list/detail APIs.
-8. Add frontend API client that requests same-origin `/api/*`.
+8. Add frontend API client that requests same-origin `/lumina/api/*`.
 9. Build standalone Reading Notes list page.
 10. Add article-style reading note page.
 11. Add local upload CLI.

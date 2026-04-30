@@ -2,6 +2,7 @@
 import DotGrid from "@/components/DotGrid.vue";
 import { listReadingNotes } from "@/features/reading-notes/api";
 import type { ReadingNoteListItem } from "@/features/reading-notes/types";
+import { appPath } from "@/utils/app-base";
 
 const notes = ref<ReadingNoteListItem[]>([]);
 const selectedTag = ref("all");
@@ -27,6 +28,9 @@ const visibleNotes = computed(() => {
 	if (selectedTag.value === "all") return notes.value;
 	return notes.value.filter((note) => note.tags.includes(selectedTag.value));
 });
+
+const coverSrc = (note: ReadingNoteListItem) =>
+	note.coverUrl ? appPath(note.coverUrl) : "";
 
 const updateThemeColors = () => {
 	const style = getComputedStyle(document.documentElement);
@@ -157,13 +161,13 @@ onMounted(async () => {
             <a
               v-for="note in visibleNotes"
               :key="note.slug"
-              :href="`/notes/${note.slug}`"
+              :href="appPath(`/notes/${note.slug}`)"
               class="group grid gap-5 rounded-lg border border-border bg-card/55 p-5 backdrop-blur-sm transition hover:border-primary/60 hover:bg-card/75 md:grid-cols-[132px_1fr]"
             >
               <div class="relative flex aspect-[2/3] w-full items-center justify-center self-start overflow-hidden rounded-md border border-border bg-primary/10 text-primary">
                 <img
                   v-if="note.coverUrl"
-                  :src="note.coverUrl"
+                  :src="coverSrc(note)"
                   :alt="note.bookTitle"
                   class="h-full w-full object-cover"
                   loading="lazy"

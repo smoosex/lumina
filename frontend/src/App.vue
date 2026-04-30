@@ -3,8 +3,9 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import HomeView from "@/views/HomeView.vue";
 import ReadingNotesView from "@/views/ReadingNotesView.vue";
 import ReadingNoteView from "@/views/ReadingNoteView.vue";
+import { appBase, routePath } from "@/utils/app-base";
 
-const currentPath = ref(window.location.pathname);
+const currentPath = ref(routePath());
 
 const noteSlug = computed(() => {
 	const match = currentPath.value.match(/^\/notes\/([^/]+)\/?$/);
@@ -14,7 +15,7 @@ const noteSlug = computed(() => {
 const isNotesIndex = computed(() => /^\/notes\/?$/.test(currentPath.value));
 
 const syncPath = () => {
-	currentPath.value = window.location.pathname;
+	currentPath.value = routePath();
 };
 
 const navigateTo = (url: URL) => {
@@ -44,6 +45,13 @@ const handleInternalLinkClick = (event: MouseEvent) => {
 
 	const url = new URL(href, window.location.origin);
 	if (url.origin !== window.location.origin) return;
+	if (
+		appBase !== "/" &&
+		url.pathname !== appBase.slice(0, -1) &&
+		!url.pathname.startsWith(appBase)
+	) {
+		return;
+	}
 
 	event.preventDefault();
 	navigateTo(url);

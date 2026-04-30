@@ -2,6 +2,7 @@
 import DotGrid from "@/components/DotGrid.vue";
 import { getReadingNote } from "@/features/reading-notes/api";
 import type { ReadingNoteDetail } from "@/features/reading-notes/types";
+import { appPath } from "@/utils/app-base";
 
 const props = defineProps<{
 	slug: string;
@@ -13,6 +14,10 @@ const hasError = ref(false);
 const themeStore = useThemeStore();
 const dotBaseColor = ref("rgba(128, 128, 128, 0.2)");
 const dotActiveColor = ref("#000000");
+
+const coverSrc = computed(() =>
+	note.value?.coverUrl ? appPath(note.value.coverUrl) : "",
+);
 
 const updateThemeColors = () => {
 	const style = getComputedStyle(document.documentElement);
@@ -67,7 +72,7 @@ onMounted(updateThemeColors);
     </div>
     <div class="relative z-10 mx-auto w-full max-w-4xl px-6 py-28">
       <a
-        href="/notes"
+        :href="appPath('/notes')"
         class="mb-10 inline-flex text-sm font-medium text-primary hover:text-foreground"
       >
         {{ $t("notes.back") }}
@@ -100,7 +105,7 @@ onMounted(updateThemeColors);
               class="aspect-[2/3] self-start overflow-hidden rounded-md border border-border bg-card/70"
             >
               <img
-                :src="note.coverUrl"
+                :src="coverSrc"
                 :alt="note.bookTitle"
                 class="h-full w-full object-cover"
                 referrerpolicy="no-referrer"

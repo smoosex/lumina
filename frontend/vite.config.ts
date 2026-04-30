@@ -56,11 +56,17 @@ export default defineConfig({
 			},
 		}),
 	],
-	base: "/",
+	base: "/lumina/",
 	server: {
 		proxy: {
-			"/api": "http://127.0.0.1:8080",
-			"/covers": "http://127.0.0.1:8080",
+			"/lumina/api": {
+				target: "http://127.0.0.1:8080",
+				rewrite: (path) => path.replace(/^\/lumina/, ""),
+			},
+			"/lumina/covers": {
+				target: "http://127.0.0.1:8080",
+				rewrite: (path) => path.replace(/^\/lumina/, ""),
+			},
 		},
 	},
 	resolve: {

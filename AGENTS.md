@@ -79,5 +79,5 @@ backend/
 
 - `cd frontend && bun run build` requires `vue-tsc -b` to pass first. Unused locals/params will fail the type checker.
 - `cd backend && go test ./...` should pass before backend changes are considered done.
-- Deploy target is the self-hosted server. Vite base path is `/`.
+- Deploy target is the self-hosted server. Vite base path is `/lumina/`.
 - CI should run `bun install --frozen-lockfile` from `frontend/`.

@@ -1,0 +1,55 @@
+{
+	"home": {
+		"description": "Passionate about code, design, and everything in between. Welcome to my digital garden.",
+		"hero": {
+			"nav": "Home",
+			"primaryButton": "Start Exploring",
+			"secondaryButton": "My Works"
+		},
+		"greeting": "Hello World",
+		"skills": {
+			"title": "Skills"
+		},
+		"notes": {
+			"title": "Reading Notes",
+			"description": "Book reflections, marked-up ideas, and the thoughts that stayed after reading.",
+			"empty": "Reading notes will appear here after the first Markdown upload.",
+			"read": "Read note"
+		},
+		"works": {
+			"title": "Selected Works",
+			"explore": "Explore",
+			"inovue-ui": {
+				"title": "INOVUE UI",
+				"description": "INOVUE UI is a component workspace and demo site built with Vue 3, Vite, Bun, and shadcn-vue"
+			},
+			"echotype": {
+				"title": "Echotype",
+				"description": "EchoType is a native offline speech-to-text menubar app for macOS"
+			},
+			"matheme": {
+				"title": "Matheme",
+				"description": "A theme switcher for MacOS with Sketchybar, Nvchad, Aerospace and so on"
+			},
+			"agent-tracker": {
+				"title": "Agent Tracker",
+				"description": "Agent Tracker is a small web app for tracking release notes and changelogs from AI coding tools"
+			}
+		},
+		"contact": {
+			"title": "Get in Touch"
+		}
+	},
+	"notes": {
+		"eyebrow": "Reading Notes",
+		"all": "All",
+		"quote": "Reading is thinking with someone else's mind.",
+		"quoteAuthor": "Arthur Schopenhauer",
+		"emptyTitle": "No notes yet",
+		"noExcerpt": "Open this note to read the full reflection.",
+		"back": "Back to reading notes",
+		"loading": "Loading note...",
+		"notFoundTitle": "Note unavailable",
+		"notFoundDescription": "This note may not be published yet, or the API is currently unreachable."
+	}
+}

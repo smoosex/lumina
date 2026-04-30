@@ -1,0 +1,55 @@
+{
+	"home": {
+		"description": "热爱代码与设计，以及两者之间的一切，欢迎来到我的数字花园。",
+		"hero": {
+			"nav": "首页",
+			"primaryButton": "开始了解",
+			"secondaryButton": "我的作品"
+		},
+		"greeting": "你好 世界",
+		"skills": {
+			"title": "技能"
+		},
+		"notes": {
+			"title": "读书笔记",
+			"description": "记录读完一本书后留下来的想法、摘记和一点不太安分的延伸。",
+			"empty": "上传第一篇 Markdown 读书笔记后，这里会显示文章。",
+			"read": "阅读笔记"
+		},
+		"works": {
+			"title": "精选作品",
+			"explore": "探索",
+			"inovue-ui": {
+				"title": "INOVUE UI",
+				"description": "INOVUE UI 是一个基于 Vue 3、Vite、Bun 和 shadcn-vue 的组件仓库与演示站点"
+			},
+			"echotype": {
+				"title": "Echotype",
+				"description": "EchoType 是一个 macOS 原生离线语音转文字 menubar 应用"
+			},
+			"matheme": {
+				"title": "Matheme",
+				"description": "一款适用于 MacOS 的主题切换器，支持 Sketchybar、Nvchad、Aerospace 等"
+			},
+			"agent-tracker": {
+				"title": "Agent Tracker",
+				"description": "Agent Tracker 是一个用来追踪 AI 编码工具更新动态的小型 Web 应用"
+			}
+		},
+		"contact": {
+			"title": "联系我"
+		}
+	},
+	"notes": {
+		"eyebrow": "读书笔记",
+		"all": "全部",
+		"quote": "阅读是在借别人的头脑思考。",
+		"quoteAuthor": "叔本华",
+		"emptyTitle": "还没有笔记",
+		"noExcerpt": "打开这篇笔记阅读完整想法。",
+		"back": "返回读书笔记",
+		"loading": "正在加载笔记...",
+		"notFoundTitle": "笔记暂不可用",
+		"notFoundDescription": "这篇笔记可能还未发布，或者 API 当前无法访问。"
+	}
+}

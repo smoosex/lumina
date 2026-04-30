@@ -79,7 +79,7 @@ func run() error {
 		return fmt.Errorf("create upload request: %w", err)
 	}
 	req.Header.Set("Content-Type", "text/markdown; charset=utf-8")
-	signRequest(req, body, secret)
+	signRequest(req, body, secret, signaturePath(req.URL.Path))
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -96,7 +96,7 @@ func run() error {
 	return nil
 }
 
-func signRequest(req *http.Request, body []byte, secret string) {
+func signRequest(req *http.Request, body []byte, secret string, path string) {
 	bodySum := sha256.Sum256(body)
 	bodyHash := hex.EncodeToString(bodySum[:])
 	timestamp := fmt.Sprint(time.Now().Unix())
@@ -104,7 +104,7 @@ func signRequest(req *http.Request, body []byte, secret string) {
 	payload := fmt.Sprintf(
 		"%s\n%s\n%s\n%s",
 		req.Method,
-		req.URL.Path,
+		path,
 		timestamp,
 		bodyHash,
 	)
@@ -115,6 +115,20 @@ func signRequest(req *http.Request, body []byte, secret string) {
 	req.Header.Set("X-Lumina-Timestamp", timestamp)
 	req.Header.Set("X-Lumina-Body-SHA256", bodyHash)
 	req.Header.Set("X-Lumina-Signature", hex.EncodeToString(mac.Sum(nil)))
+}
+
+func signaturePath(path string) string {
+	if path == "" {
+		return "/"
+	}
+	if strings.HasPrefix(path, "/api/") || path == "/api" {
+		return path
+	}
+	apiIndex := strings.Index(path, "/api/")
+	if apiIndex >= 0 {
+		return path[apiIndex:]
+	}
+	return path
 }
 
 func firstNonEmpty(values ...string) string {

@@ -346,7 +346,7 @@ cd backend
 go run ./cmd/upload-note -file ../notes/thinking-in-systems.md
 ```
 
-The CLI reads `UPLOAD_SIGNATURE_SECRET` and `UPLOAD_API_BASE_URL` from `backend/.env`. `-base-url` can override the target API when testing locally.
+The CLI reads `UPLOAD_SIGNATURE_SECRET` and `UPLOAD_API_BASE_URL` from `backend/.env`. `-base-url` can override the target API when testing locally. When the public base URL is served under `/lumina`, the CLI still signs the rewritten backend path under `/api` so it matches the upload middleware behind Nginx.
 
 ## Implementation Order
 

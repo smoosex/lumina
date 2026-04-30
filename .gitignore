@@ -13,6 +13,10 @@ dist
 dist-ssr
 coverage
 *.local
+.env
+.env.*
+!.env.example
+!**/.env.example
 
 # Editor directories and files
 .vscode/*
@@ -38,8 +42,12 @@ __screenshots__/
 # Playwright
 .playwright-mcp/
 
+# Runtime uploads
+backend/data/
+
 # MacOS
 .DS_Store
 
 # Large 3D assets (use bun run precompute to generate particle-positions.json)
 *.obj
+!frontend/src/assets/IronMan3D.obj

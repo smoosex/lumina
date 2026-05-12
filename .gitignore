@@ -53,3 +53,6 @@ backend/data/
 # Large 3D assets (use bun run precompute to generate particle-positions.json)
 *.obj
 !frontend/src/assets/IronMan3D.obj
+
+# Local reading notes source files
+notes/
